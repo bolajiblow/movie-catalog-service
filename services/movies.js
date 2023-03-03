@@ -26,7 +26,7 @@ module.exports = {
   },
 
   get: async function (data) {
-    const movie = await models.movies.findOne({ id: data.id });
+    const movie = await models.movies.findById(data.id);
     if (movie == null) throw new Error("Movie does not exists");
 
     return {
